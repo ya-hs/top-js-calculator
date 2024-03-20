@@ -6,7 +6,7 @@
   />
 </a>
 <br>
-
+<br>
 As part of my learning journey for frontend development, this is my final project for the Odin Project Foundations path. I will also be experimenting with using gitmoji for all commits.
 
 ### Technologies Used
