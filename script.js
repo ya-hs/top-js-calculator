@@ -8,29 +8,19 @@ const btnClear = document.querySelector("#btn-clear");
 let displayText = "";
 let firstNumber = "";
 let secondNumber = "";
-
-
-// ADD CLICKED NUMBER TO DISPLAY
-
-
 display.textContent = displayText;
-
-function addToDisplay(numClicked) {
-    displayText += numClicked;
-    display.textContent = displayText;
-}
-
-btnNum.forEach(button => {
-    button.addEventListener('click', () => {
-        addToDisplay(button.innerText);
-    })
-})
 
 
 // FUNCTIONS
 
 btnEquals.addEventListener('click', () => {
     performCalculation();
+})
+
+btnNum.forEach(button => {
+    button.addEventListener('click', () => {
+        addToDisplay(button.innerText);
+    })
 })
 
 btnClear.addEventListener('click', clearMemory);
@@ -41,6 +31,13 @@ btnOp.forEach(button => {
         return chosenOperator = button.id;
     })
 })
+
+
+
+function addToDisplay(numClicked) {
+    displayText += numClicked;
+    display.textContent = displayText;
+}
 
 function clearNums() {
     firstNumber = displayText;
