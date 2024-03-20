@@ -3,6 +3,7 @@ const btnNum = document.querySelectorAll(".btn-num");
 const btnOp = document.querySelectorAll(".btn-op");
 const btnEquals = document.querySelector("#btn-equals");
 const btnSelector = document.querySelectorAll("button");
+const btnClear = document.querySelector("#btn-clear");
 
 let displayText = "";
 let firstNumber = "";
@@ -32,6 +33,7 @@ btnEquals.addEventListener('click', () => {
     performCalculation();
 })
 
+btnClear.addEventListener('click', clearMemory);
 
 btnOp.forEach(button => {
     button.addEventListener('click', () => {
@@ -65,6 +67,12 @@ function operate(num1, num2, operator) {
     return operations[operator](num1, num2);
 }
 
+function clearMemory() {
+    displayText = "";
+    display.textContent = displayText;
+    firstNumber = "";
+    secondNumber = "";
+}
 
 
 
