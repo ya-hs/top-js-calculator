@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
     /* outline: red 1px solid; */
+    --mint-cream: #F0F7F4;
+    --ash-gray: #B3BFB8;
+    --battleship-gray: #7e8d85;
+    --feldgrau: #3c493f;
+    --celadron: #a2e3c4;
 }
 
 body,
@@ -14,6 +19,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: var(--mint-cream);
 }
 
 .container {
@@ -22,18 +28,25 @@ main {
 
     display: flex;
     flex-wrap: wrap;
+
+    outline: 7px solid var(--feldgrau);
+    border-radius: 5px;
 }
 
 #display {
     height: 20%;
     width: 100%;
-    background-color: #e5e5e5;
+    background-color: var(--ash-gray);
     outline: 1px solid grey;
     margin: 0;
+    padding: 20px;
+    font-size: 72px;
+    font-family: sans-serif;
 }
 
 button {
     height: 16%;
+    font-size: 24px;
 }
 
 .btn-small {
@@ -42,4 +55,24 @@ button {
 
 .btn-lge {
     width: 50%;
+}
+
+.btn-dark {
+    background-color: var(--battleship-gray);
+    border: 3px solid var(--feldgrau);
+}
+
+.btn-dark:hover {
+    background-color: #717e77;
+    cursor: pointer;
+}
+
+.btn-num {
+    background-color: var(--celadron);
+    border: 3px solid var(--feldgrau);
+}
+
+.btn-num:hover {
+    background-color: #98d4b7;
+    cursor: pointer;
 }
