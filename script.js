@@ -58,16 +58,12 @@ function addToDisplay(numClicked) {
 // Stores the current number and running total in order to chain operations together
 function storeNums() {
     currentNumber = display.textContent;
-    console.log("Beginning CN: " + currentNumber);
-    console.log("Beginning RT: " + runningTotal);
     if (numClicks > 0) {
         const previousResult = operate(runningTotal, currentNumber, chosenOperator);
         runningTotal = previousResult;
     } else {
         runningTotal = display.textContent;
     }
-    console.log("Ending CN: " + currentNumber);
-    console.log("Ending RT: " + runningTotal);
     numClicks++;
 }
 
@@ -82,15 +78,19 @@ function clearNums() {
 
 // Performs final calculation when equals is clicked
 function performCalculation() {
-    const secondNumber = displayText;
-    const result = operate(Number(runningTotal), Number(secondNumber), chosenOperator);
+    currentNumber = displayText;
+    const result = operate(runningTotal, currentNumber, chosenOperator);
     displayText = result;
     if (result === Infinity) {
         display.textContent = "NOPE"
     } else {
         display.textContent = result;
     }
-    console.log(operate(runningTotal, secondNumber, chosenOperator));
+    // currentNumber = "";
+    runningTotal = "";
+    console.log(operate(runningTotal, currentNumber, chosenOperator));
+    console.log("CN " + currentNumber);
+    console.log("RT " + runningTotal);
 }
 
 // Inputs current number and running total into the appropriate arithmetic function
@@ -134,7 +134,7 @@ function multiply(num1, num2) {
 
 function divide(num1, num2) {
     let result = Number(num1) / Number(num2);
-    return result;
+    return result.toFixed(2);
 }
 function square(num) {
     return Number(num) ** 2;
