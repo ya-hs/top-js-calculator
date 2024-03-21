@@ -46,7 +46,7 @@ main {
 
 button {
     height: 16%;
-    font-size: 24px;
+    font-size: 36px;
 }
 
 .btn-small {
@@ -75,4 +75,9 @@ button {
 .btn-num:hover {
     background-color: #98d4b7;
     cursor: pointer;
+}
+
+.inactive {
+    background-color: #8f9692;
+    color: #6a6c6b;
 }
